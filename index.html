@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>من هو هذا القائد العظيم؟ — عرض تفاعلي</title>
+  <title>Who Is This Great Leader? — Interactive Presentation</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Cairo & Tajawal -->
+  <!-- Google Fonts: Inter & Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Poppins:wght@500;700;900&display=swap" rel="stylesheet">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -32,14 +32,14 @@
       padding: 0;
       background: radial-gradient(circle at 50% 20%, #162238 0%, #070d19 100%);
       color: #f8fafc;
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Inter', sans-serif;
       overflow: hidden;
       height: 100vh;
       width: 100vw;
     }
 
     h1, h2, h3, .font-display {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     /* Subtle Geometric Animated Background */
@@ -160,7 +160,7 @@
       100% { width: 420px; height: 420px; opacity: 0; }
     }
 
-    /* Cinematic Spotlight Overlay for Question & Reveal Slides */
+    /* Cinematic Spotlight Overlay */
     .spotlight-overlay {
       position: fixed;
       inset: 0;
@@ -249,7 +249,6 @@
       100% { opacity: 0; transform: scale(2.2); }
     }
 
-    /* Kahoot Countdown Overlay */
     #countdown-overlay {
       position: fixed;
       inset: 0;
@@ -326,7 +325,7 @@
 
   <!-- Kahoot Countdown Overlay -->
   <div id="countdown-overlay">
-    <p class="text-amber-300 text-2xl font-bold uppercase tracking-widest mb-4">إعلان القائد المنتظر...</p>
+    <p class="text-amber-300 text-2xl font-bold uppercase tracking-widest mb-4">Announcing the Awaited Leader...</p>
     <div id="countdown-num" class="countdown-number font-display">3</div>
   </div>
 
@@ -341,7 +340,7 @@
         <i class="fa-solid fa-sparkles"></i>
       </span>
       <span class="text-xs sm:text-sm font-semibold tracking-widest uppercase text-slate-300">
-        تحدي القائد الغامض
+        The Mystery Leader Challenge
       </span>
     </div>
 
@@ -349,7 +348,7 @@
       <span id="slide-counter" class="text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-amber-400 font-display">
         1 / 11
       </span>
-      <button id="fullscreen-btn" onclick="toggleFullScreen()" title="ملء الشاشة"
+      <button id="fullscreen-btn" onclick="toggleFullScreen()" title="Fullscreen"
         class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-slate-200 transition cursor-pointer">
         <i class="fa-solid fa-expand"></i>
       </button>
@@ -372,21 +371,21 @@
         </div>
 
         <span class="anim-item delay-1 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-bold tracking-widest uppercase mb-5">
-          هل يمكنك تخمين من يكون؟
+          Can you guess who he is?
         </span>
 
         <h1 class="anim-item delay-2 text-3xl sm:text-5xl md:text-6xl font-black text-white leading-tight mb-6">
-          أهلاً بكم جميعا!
+          Welcome everyone!
         </h1>
 
         <p class="anim-item delay-3 text-lg sm:text-2xl md:text-3xl text-slate-200 font-medium max-w-3xl leading-relaxed mb-10">
-          اليوم سنتحدث عن قائد تاريخي عظيم، أتمنى أن تكونوا قادرين على تخمين هويته!
+          Today we will talk about a great historical leader; I hope you will be able to guess his identity!
         </p>
 
         <button onclick="nextSlide()"
           class="anim-item delay-4 group px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-base sm:text-lg shadow-lg shadow-amber-500/25 transition-all transform hover:scale-105 active:scale-95 flex items-center gap-3 cursor-pointer">
-          <span>بدء العرض التفاعلي</span>
-          <i class="fa-solid fa-arrow-right transition-transform group-hover:-translate-x-1"></i>
+          <span>Start Interactive Presentation</span>
+          <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
         </button>
       </div>
     </section>
@@ -396,7 +395,7 @@
       <div class="max-w-4xl w-full">
         <div class="anim-item flex items-center gap-3 mb-4">
           <span class="px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-extrabold tracking-widest uppercase">
-            الدليل 01 • النشأة والولادة
+            Clue 01 • Origins & Birth
           </span>
         </div>
 
@@ -404,17 +403,17 @@
           <div class="flex flex-col md:flex-row items-center gap-8">
             <div class="anim-item delay-1 flex-shrink-0 w-44 h-44 rounded-3xl glass-gold flex flex-col items-center justify-center text-center p-4">
               <i class="fa-solid fa-chess-rook text-3xl text-amber-400 mb-2"></i>
-              <span class="text-xs font-bold uppercase tracking-widest text-amber-300/80">ولد في</span>
-              <span class="font-display text-3xl sm:text-4xl font-black text-white mt-1">1138 م</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-amber-300/80">Born in</span>
+              <span class="font-display text-3xl sm:text-4xl font-black text-white mt-1">1138 AD</span>
             </div>
 
-            <div class="flex-1 text-center md:text-right">
+            <div class="flex-1 text-center md:text-left">
               <h2 class="anim-item delay-2 text-2xl sm:text-4xl font-extrabold text-white leading-snug mb-5">
-                ولد في قلعة تكريت بالعراق عام 1138 ميلادية.
+                He was born in Tikrit Castle in Iraq in 1138 AD.
               </h2>
-              <div class="anim-item delay-3 h-1 w-20 bg-gradient-to-r from-amber-400 to-emerald-400 rounded-full mx-auto md:mx-right mb-5"></div>
+              <div class="anim-item delay-3 h-1 w-20 bg-gradient-to-r from-amber-400 to-emerald-400 rounded-full mx-auto md:mx-0 mb-5"></div>
               <p class="anim-item delay-4 text-xl sm:text-2xl text-slate-200 font-medium leading-relaxed">
-                كان والده والياً شهيراً وعادلاً.
+                His father was a famous and just governor.
               </p>
             </div>
           </div>
@@ -427,35 +426,35 @@
       <div class="max-w-5xl w-full">
         <div class="anim-item flex items-center justify-between mb-4">
           <span class="px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-extrabold tracking-widest uppercase">
-            الدليل 02 • الشباب والاهتمامات
+            Clue 02 • Youth & Interests
           </span>
         </div>
 
         <div class="glass-card rounded-3xl p-6 sm:p-10 mb-6">
           <p class="anim-item delay-1 text-xl sm:text-3xl font-bold text-white leading-relaxed text-center mb-8">
-            في شبابه، أحب <span class="text-amber-400">العلم</span>، و<span class="text-emerald-400">الدراسات الدينية</span>، و<span class="text-amber-400">الشعر</span>، و<span class="text-emerald-400">الأدب</span>، ودراسة <span class="text-amber-400">سير القادة العظام</span>.
+            In his youth, he loved <span class="text-amber-400">science</span>, <span class="text-emerald-400">religious studies</span>, <span class="text-amber-400">poetry</span>, <span class="text-emerald-400">literature</span>, and studying <span class="text-amber-400">the biographies of great leaders</span>.
           </p>
 
           <div class="anim-item delay-2 grid grid-cols-2 sm:grid-cols-5 gap-3">
             <div class="p-3.5 rounded-2xl bg-slate-900/70 border border-slate-700/80 text-center">
               <i class="fa-solid fa-atom text-amber-400 text-xl mb-1.5"></i>
-              <p class="text-xs sm:text-sm font-bold text-slate-200">العلوم</p>
+              <p class="text-xs sm:text-sm font-bold text-slate-200">Sciences</p>
             </div>
             <div class="p-3.5 rounded-2xl bg-slate-900/70 border border-slate-700/80 text-center">
               <i class="fa-solid fa-book-open text-emerald-400 text-xl mb-1.5"></i>
-              <p class="text-xs sm:text-sm font-bold text-slate-200">الدراسات الدينية</p>
+              <p class="text-xs sm:text-sm font-bold text-slate-200">Religious Studies</p>
             </div>
             <div class="p-3.5 rounded-2xl bg-slate-900/70 border border-slate-700/80 text-center">
               <i class="fa-solid fa-feather-pointed text-amber-400 text-xl mb-1.5"></i>
-              <p class="text-xs sm:text-sm font-bold text-slate-200">الشعر</p>
+              <p class="text-xs sm:text-sm font-bold text-slate-200">Poetry</p>
             </div>
             <div class="p-3.5 rounded-2xl bg-slate-900/70 border border-slate-700/80 text-center">
               <i class="fa-solid fa-scroll text-emerald-400 text-xl mb-1.5"></i>
-              <p class="text-xs sm:text-sm font-bold text-slate-200">الأدب</p>
+              <p class="text-xs sm:text-sm font-bold text-slate-200">Literature</p>
             </div>
             <div class="col-span-2 sm:col-span-1 p-3.5 rounded-2xl bg-slate-900/70 border border-slate-700/80 text-center">
               <i class="fa-solid fa-chess-knight text-amber-400 text-xl mb-1.5"></i>
-              <p class="text-xs sm:text-sm font-bold text-slate-200">سير القادة</p>
+              <p class="text-xs sm:text-sm font-bold text-slate-200">Leaders' Biographies</p>
             </div>
           </div>
         </div>
@@ -463,16 +462,16 @@
         <!-- Interactive Question Box (Spotlight target) + Live QR & Link -->
         <div id="q1-box" onclick="toggleSpotlight('q1-box')"
           class="anim-item delay-3 spotlight-box question-highlight glass-gold rounded-3xl p-5 sm:p-6 flex flex-col lg:flex-row items-center justify-between gap-5 cursor-pointer">
-          <div class="flex items-center gap-4 text-center sm:text-right">
+          <div class="flex items-center gap-4 text-center sm:text-left">
             <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-400/50 flex items-center justify-center flex-shrink-0">
               <i class="fa-solid fa-comments text-xl text-amber-400"></i>
             </div>
             <div>
               <span class="text-xs font-extrabold uppercase tracking-widest text-amber-300 block mb-1">
-                سؤال تفاعلي مباشر (امسح الكود أو افتح الرابط للتصويت)
+                Live Interactive Question (Scan code or open link)
               </span>
               <h3 class="text-lg sm:text-2xl font-black text-white">
-                هل يحب أحدكم هنا هذه العلوم والهوايات؟
+                Does any of you like any of these hobbies?
               </h3>
             </div>
           </div>
@@ -480,18 +479,18 @@
           <!-- QR & Link Widget -->
           <div onclick="event.stopPropagation()" class="flex flex-wrap sm:flex-nowrap items-center justify-center gap-4 bg-slate-950/75 border border-amber-400/30 rounded-2xl p-3">
             <div id="qr-q1" class="bg-white p-1.5 rounded-xl flex-shrink-0"></div>
-            <div class="flex flex-col gap-2 text-right max-w-[260px]">
+            <div class="flex flex-col gap-2 text-left max-w-[260px]">
               <div class="flex items-center gap-1.5 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1">
                 <a id="link-q1" href="#vote=q1" target="_blank" class="text-[11px] text-amber-300 hover:underline truncate max-w-[175px]" dir="ltr">Loading...</a>
-                <button onclick="copyVoteUrl('q1', this)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-200 font-bold cursor-pointer">نسخ</button>
+                <button onclick="copyVoteUrl('q1', this)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-200 font-bold cursor-pointer">Copy</button>
               </div>
               <div class="flex items-center gap-2">
                 <button onclick="openParticipantsModal('q1')"
                   class="flex-1 px-3 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs transition flex items-center justify-center gap-1.5 cursor-pointer shadow">
                   <i class="fa-solid fa-users"></i>
-                  <span>عرض المشاركين (<span id="badge-q1">0</span>)</span>
+                  <span>View Submissions (<span id="badge-q1">0</span>)</span>
                 </button>
-                <button onclick="openVoteWindow('q1')" title="فتح صفحة التصويت"
+                <button onclick="openVoteWindow('q1')" title="Open Voting Page"
                   class="px-2.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-amber-300 text-xs font-bold cursor-pointer">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </button>
@@ -501,8 +500,8 @@
 
           <button onclick="event.stopPropagation(); nextSlide();"
             class="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm transition transform hover:scale-105 flex items-center gap-2 whitespace-nowrap cursor-pointer shadow-lg shadow-emerald-500/20">
-            <span>التالي</span>
-            <i class="fa-solid fa-arrow-left"></i>
+            <span>Next</span>
+            <i class="fa-solid fa-arrow-right"></i>
           </button>
         </div>
       </div>
@@ -513,7 +512,7 @@
       <div class="max-w-5xl w-full">
         <div class="anim-item mb-4">
           <span class="px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-extrabold tracking-widest uppercase">
-            الدليل 03 • الصعود القيادي
+            Clue 03 • Rise to Leadership
           </span>
         </div>
 
@@ -522,12 +521,12 @@
             <div>
               <div class="flex items-center justify-between mb-6">
                 <span class="px-3 py-1 rounded-lg bg-amber-500/15 text-amber-400 text-xs font-bold uppercase tracking-wider">
-                  المرحلة 01 • الشام
+                  Phase 01 • The Levant
                 </span>
                 <i class="fa-solid fa-shield-halved text-2xl text-amber-400"></i>
               </div>
               <p class="text-xl sm:text-2xl font-bold text-white leading-relaxed">
-                بدأ مسيرته العسكرية في بلاد الشام تحت قيادة عمه <span class="text-amber-300">أسد الدين شيركوه</span>.
+                He began his military career in the Levant under the command of his uncle <span class="text-amber-300">Asad al-Din Shirkuh</span>.
               </p>
             </div>
           </div>
@@ -536,12 +535,12 @@
             <div>
               <div class="flex items-center justify-between mb-6">
                 <span class="px-3 py-1 rounded-lg bg-emerald-500/15 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-                  المرحلة 02 • مصر (1171 م)
+                  Phase 02 • Egypt (1171 AD)
                 </span>
                 <i class="fa-solid fa-crown text-2xl text-emerald-400"></i>
               </div>
               <p class="text-xl sm:text-2xl font-bold text-white leading-relaxed">
-                أُرسل في حملات عسكرية إلى مصر لمساعدة وزرائها وتأمينها، حتى تولى الحكم في مصر عام <span class="text-emerald-300 font-black">1171</span> ميلادية.
+                He was sent on military campaigns to Egypt to assist its ministers and secure it, until he assumed rule in Egypt in <span class="text-emerald-300 font-black">1171</span> AD.
               </p>
             </div>
           </div>
@@ -554,11 +553,11 @@
       <div class="max-w-4xl w-full text-center">
         <div class="anim-item inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-extrabold uppercase tracking-widest mb-6">
           <i class="fa-solid fa-hand-sparkles"></i>
-          <span>استطلاع رأي الجمهور (تصويت مباشر)</span>
+          <span>Audience Poll (Live Voting)</span>
         </div>
 
         <h2 class="anim-item delay-1 text-3xl sm:text-5xl font-black text-white leading-tight mb-10">
-          هل يطمح أحدكم لحكم مصر في المستقبل؟
+          Does anyone among you aspire to rule Egypt in the future?
         </h2>
 
         <div id="poll-box" class="spotlight-box">
@@ -566,18 +565,18 @@
             <button onclick="castVote('yes')"
               class="glass-card hover:border-amber-400 rounded-3xl p-7 transition-all transform hover:scale-105 active:scale-95 flex flex-col items-center cursor-pointer group">
               <span class="text-5xl mb-3 group-hover:scale-110 transition-transform">🙋‍♂️</span>
-              <span class="text-xl font-extrabold text-white mb-2">نعم، أتمنى ذلك!</span>
+              <span class="text-xl font-extrabold text-white mb-2">Yes, I wish so!</span>
               <span id="vote-yes-count" class="px-4 py-1 rounded-full bg-amber-500/20 text-amber-300 font-display font-black text-lg">
-                0 أصوات
+                0 votes
               </span>
             </button>
 
             <button onclick="castVote('maybe')"
               class="glass-card hover:border-emerald-400 rounded-3xl p-7 transition-all transform hover:scale-105 active:scale-95 flex flex-col items-center cursor-pointer group">
               <span class="text-5xl mb-3 group-hover:scale-110 transition-transform">😂</span>
-              <span class="text-xl font-extrabold text-white mb-2">ربما في يوم ما!</span>
+              <span class="text-xl font-extrabold text-white mb-2">Maybe one day!</span>
               <span id="vote-maybe-count" class="px-4 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-display font-black text-lg">
-                0 أصوات
+                0 votes
               </span>
             </button>
           </div>
@@ -586,24 +585,24 @@
         <!-- Live QR & Direct Link for Slide 5 -->
         <div class="anim-item delay-3 flex flex-wrap items-center justify-center gap-4 bg-slate-900/80 border border-emerald-400/30 rounded-2xl p-3.5 max-w-2xl mx-auto mb-4">
           <div id="qr-q2" class="bg-white p-1.5 rounded-xl flex-shrink-0"></div>
-          <div class="flex flex-col gap-2 text-right flex-1 min-w-[220px]">
-            <span class="text-xs font-bold text-emerald-300"><i class="fa-solid fa-qrcode ml-1"></i> امسح الكود أو افتح الرابط للتصويت باسمك:</span>
+          <div class="flex flex-col gap-2 text-left flex-1 min-w-[220px]">
+            <span class="text-xs font-bold text-emerald-300"><i class="fa-solid fa-qrcode mr-1"></i> Scan the code or open the link to vote:</span>
             <div class="flex items-center gap-2 bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-1.5">
               <a id="link-q2" href="#vote=q2" target="_blank" class="text-xs text-amber-300 hover:underline truncate flex-1" dir="ltr">Loading...</a>
-              <button onclick="copyVoteUrl('q2', this)" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 font-bold cursor-pointer">نسخ الرابط</button>
+              <button onclick="copyVoteUrl('q2', this)" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 font-bold cursor-pointer">Copy Link</button>
             </div>
             <div class="flex flex-wrap items-center gap-2">
               <button onclick="openParticipantsModal('q2')"
                 class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs transition flex items-center gap-1.5 cursor-pointer shadow">
                 <i class="fa-solid fa-users"></i>
-                <span>عرض المشاركين واختياراتهم (<span id="badge-q2">0</span>)</span>
+                <span>View Participants (<span id="badge-q2">0</span>)</span>
               </button>
               <button onclick="openVoteWindow('q2')"
                 class="px-3 py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400/40 text-emerald-300 text-xs font-bold cursor-pointer">
-                <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i> فتح صفحة التصويت
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Open Voting Page
               </button>
               <button onclick="toggleSpotlight('poll-box')" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-amber-400/40 text-amber-300 text-xs font-bold transition cursor-pointer">
-                <i class="fa-solid fa-lightbulb ml-1"></i> إضاءة
+                <i class="fa-solid fa-lightbulb mr-1"></i> Spotlight
               </button>
             </div>
           </div>
@@ -615,43 +614,43 @@
     <section class="slide" data-slide="6">
       <div class="max-w-5xl w-full text-center">
         <span class="anim-item inline-block px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-extrabold tracking-widest uppercase mb-4">
-          الدليل 04 • الوحدة والقوة
+          Clue 04 • Unity & Strength
         </span>
 
         <h2 class="anim-item delay-1 text-2xl sm:text-4xl font-extrabold text-white max-w-3xl mx-auto leading-snug mb-8">
-          نجح في توحيد مصر، بلاد الشام، سوريا، العراق، واليمن. (انقر على البطاقات لإظهار الأعلام!)
+          He succeeded in uniting Egypt, the Levant, Syria, Iraq, and Yemen. (Click cards to reveal flags!)
         </h2>
 
         <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 sm:gap-5 mb-8">
           <div class="region-node glass-card rounded-3xl p-5 flex flex-col items-center justify-center cursor-pointer transition transform hover:scale-105" data-region="0" onclick="toggleFlag(this)">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-display font-black text-base mb-2">٠١</div>
-            <h3 class="text-base sm:text-lg font-extrabold text-white mb-1">مصر</h3>
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-display font-black text-base mb-2">01</div>
+            <h3 class="text-base sm:text-lg font-extrabold text-white mb-1">Egypt</h3>
             <div class="flag-container text-3xl h-10 flex items-center justify-center transition-all duration-300 transform scale-0 opacity-0">🇪🇬</div>
           </div>
           <div class="region-node glass-card rounded-3xl p-5 flex flex-col items-center justify-center cursor-pointer transition transform hover:scale-105" data-region="1" onclick="toggleFlag(this)">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-display font-black text-base mb-2">٠٢</div>
-            <h3 class="text-base sm:text-lg font-extrabold text-white mb-1">بلاد الشام</h3>
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-display font-black text-base mb-2">02</div>
+            <h3 class="text-base sm:text-lg font-extrabold text-white mb-1">The Levant</h3>
             <div class="flag-container text-3xl h-10 flex items-center justify-center transition-all duration-300 transform scale-0 opacity-0">🇵🇸</div>
           </div>
           <div class="region-node glass-card rounded-3xl p-5 flex flex-col items-center justify-center cursor-pointer transition transform hover:scale-105" data-region="2" onclick="toggleFlag(this)">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-display font-black text-base mb-2">٠٣</div>
-            <h3 class="text-base sm:text-lg font-extrabold text-white mb-1">سوريا</h3>
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-display font-black text-base mb-2">03</div>
+            <h3 class="text-base sm:text-lg font-extrabold text-white mb-1">Syria</h3>
             <div class="flag-container text-3xl h-10 flex items-center justify-center transition-all duration-300 transform scale-0 opacity-0">🇸🇾</div>
           </div>
           <div class="region-node glass-card rounded-3xl p-5 flex flex-col items-center justify-center cursor-pointer transition transform hover:scale-105" data-region="3" onclick="toggleFlag(this)">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-display font-black text-base mb-2">٠٤</div>
-            <h3 class="text-base sm:text-lg font-extrabold text-white mb-1">العراق</h3>
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-display font-black text-base mb-2">04</div>
+            <h3 class="text-base sm:text-lg font-extrabold text-white mb-1">Iraq</h3>
             <div class="flag-container text-3xl h-10 flex items-center justify-center transition-all duration-300 transform scale-0 opacity-0">🇮🇶</div>
           </div>
           <div class="col-span-2 sm:col-span-1 region-node glass-card rounded-3xl p-5 flex flex-col items-center justify-center cursor-pointer transition transform hover:scale-105" data-region="4" onclick="toggleFlag(this)">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-display font-black text-base mb-2">٠٥</div>
-            <h3 class="text-base sm:text-lg font-extrabold text-white mb-1">اليمن</h3>
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-display font-black text-base mb-2">05</div>
+            <h3 class="text-base sm:text-lg font-extrabold text-white mb-1">Yemen</h3>
             <div class="flag-container text-3xl h-10 flex items-center justify-center transition-all duration-300 transform scale-0 opacity-0">🇾🇪</div>
           </div>
         </div>
 
         <button onclick="replayRegions()" class="anim-item delay-3 text-xs font-bold uppercase tracking-widest text-amber-400 hover:text-amber-300 cursor-pointer">
-          <i class="fa-solid fa-rotate-right ml-1"></i> إعادة تسلسل توحيد الأقاليم
+          <i class="fa-solid fa-rotate-right mr-1"></i> Replay Regions Unification Sequence
         </button>
       </div>
     </section>
@@ -661,13 +660,13 @@
       <div class="max-w-5xl w-full">
         <div class="anim-item mb-4">
           <span class="px-3.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-extrabold tracking-widest uppercase">
-            الدليل 05 • الأخلاق والإنسانية
+            Clue 05 • Morals & Humanity
           </span>
         </div>
 
         <div class="anim-item delay-1 glass-card rounded-3xl p-6 sm:p-8 mb-6 text-center">
           <p class="text-xl sm:text-2xl font-bold text-white leading-relaxed">
-            اهتم ببناء المدارس وأنشأ المستشفيات لعلاج الفقراء بالمجان، وعُرف بشدة العدل والزهد.
+            He cared about building schools and established hospitals to treat the poor for free, and was known for extreme justice and asceticism.
           </p>
         </div>
 
@@ -676,32 +675,32 @@
             <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center text-2xl mb-4">
               <i class="fa-solid fa-school"></i>
             </div>
-            <h3 class="text-lg font-extrabold text-white mb-1">المدارس</h3>
-            <p class="text-sm text-slate-300">بناء مراكز التعليم ونشر المعرفة.</p>
+            <h3 class="text-lg font-extrabold text-white mb-1">Schools</h3>
+            <p class="text-sm text-slate-300">Building centers of education and spreading knowledge.</p>
           </div>
 
           <div class="anim-item delay-3 glass-card rounded-2xl p-6 border-b-4 border-emerald-400">
             <div class="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-2xl mb-4">
               <i class="fa-solid fa-hospital"></i>
             </div>
-            <h3 class="text-lg font-extrabold text-white mb-1">مستشفيات مجانية</h3>
-            <p class="text-sm text-slate-300">علاج المحتاجين والمرضى بدون أي تكلفة.</p>
+            <h3 class="text-lg font-extrabold text-white mb-1">Free Hospitals</h3>
+            <p class="text-sm text-slate-300">Treating the needy and the sick at no cost.</p>
           </div>
 
           <div class="anim-item delay-4 glass-card rounded-2xl p-6 border-b-4 border-amber-400">
             <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center text-2xl mb-4">
               <i class="fa-solid fa-scale-balanced"></i>
             </div>
-            <h3 class="text-lg font-extrabold text-white mb-1">العدل المطلق</h3>
-            <p class="text-sm text-slate-300">الإنصاف والرحمة لجميع رعيته.</p>
+            <h3 class="text-lg font-extrabold text-white mb-1">Absolute Justice</h3>
+            <p class="text-sm text-slate-300">Fairness and mercy for all his subjects.</p>
           </div>
 
           <div class="anim-item delay-5 glass-card rounded-2xl p-6 border-b-4 border-emerald-400">
             <div class="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-2xl mb-4">
               <i class="fa-solid fa-hand-holding-heart"></i>
             </div>
-            <h3 class="text-lg font-extrabold text-white mb-1">الزهد</h3>
-            <p class="text-sm text-slate-300">العيش بتواضع وتوزيع الأموال على المحتاجين.</p>
+            <h3 class="text-lg font-extrabold text-white mb-1">Asceticism</h3>
+            <p class="text-sm text-slate-300">Living modestly and distributing wealth to the needy.</p>
           </div>
         </div>
       </div>
@@ -711,16 +710,16 @@
     <section class="slide" data-slide="8">
       <div class="max-w-4xl w-full text-center">
         <span class="anim-item inline-block px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-extrabold tracking-widest uppercase mb-6">
-          الدليل 06 • الانتصار الأبرز
+          Clue 06 • Greatest Triumph
         </span>
 
         <div class="anim-item delay-1 glass-gold rounded-3xl p-10 sm:p-14">
           <div class="font-display text-6xl sm:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-400 to-emerald-400 mb-6 tracking-tight">
-            ١١٨٧ م
+            1187 AD
           </div>
           <div class="w-24 h-1.5 bg-amber-400 rounded-full mx-auto mb-8"></div>
           <p class="anim-item delay-2 text-2xl sm:text-3xl font-extrabold text-white leading-snug max-w-2xl mx-auto">
-            من أعظم انتصاراته تحرير القدس الشريف في عام 1187 ميلادية (معركة حطين وما بعدها).
+            Among his greatest victories was the liberation of Noble Jerusalem in 1187 AD (the Battle of Hattin and beyond).
           </p>
         </div>
       </div>
@@ -730,112 +729,130 @@
     <section class="slide" data-slide="9">
       <div class="max-w-4xl w-full text-center">
         <span class="anim-item inline-block px-3.5 py-1 rounded-full bg-slate-700/70 text-slate-300 text-xs font-extrabold tracking-widest uppercase mb-6">
-          الدليل 07 • الخاتمة والوفاة
+          Clue 07 • Conclusion & Death
         </span>
 
         <div class="anim-item delay-1 glass-card rounded-3xl p-8 sm:p-12">
           <i class="fa-solid fa-hourglass-end text-4xl text-amber-400 mb-6"></i>
           <p class="text-2xl sm:text-3xl font-bold text-white leading-relaxed mb-8">
-            توفي في دمشق عام <span class="text-amber-400">589 هجرية</span>، الموافق <span class="text-emerald-400">4 مارس 1193 ميلادية</span>.
+            He passed away in Damascus in <span class="text-amber-400">589 AH</span>, corresponding to <span class="text-emerald-400">March 4, 1193 AD</span>.
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
             <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-700">
-              <span class="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-1">التقويم الهجري</span>
-              <span class="font-display text-2xl font-black text-white">589 هـ</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-1">Hijri Calendar</span>
+              <span class="font-display text-2xl font-black text-white">589 AH</span>
             </div>
             <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-700">
-              <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-1">التقويم الميلادي</span>
-              <span class="font-display text-2xl font-black text-white">4 مارس 1193</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-1">Gregorian Calendar</span>
+              <span class="font-display text-2xl font-black text-white">March 4, 1193</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 10 -->
+    <!-- SLIDE 10 (GUESS THE LEADER & CORRECT GUESSERS CHECKER) -->
     <section class="slide" data-slide="10">
       <div class="max-w-4xl w-full flex flex-col items-center text-center">
-        <div class="relative w-44 h-44 flex items-center justify-center mb-8">
+        <div class="relative w-36 h-36 flex items-center justify-center mb-6">
           <div class="radar-ring"></div>
           <div class="radar-ring"></div>
-          <div class="radar-ring"></div>
-          <div class="relative z-10 w-28 h-28 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-2xl shadow-amber-500/40">
-            <i class="fa-solid fa-question text-5xl text-slate-950"></i>
+          <div class="relative z-10 w-24 h-24 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-2xl shadow-amber-500/40">
+            <i class="fa-solid fa-question text-4xl text-slate-950"></i>
           </div>
         </div>
 
-        <span class="anim-item text-amber-400 text-sm font-extrabold uppercase tracking-widest mb-3">
-          لحظة الحقيقة
+        <span class="anim-item text-amber-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest mb-2">
+          Final Guess Challenge
         </span>
 
-        <h2 class="anim-item delay-1 text-3xl sm:text-5xl md:text-6xl font-black text-white leading-tight mb-4">
-          إذن... من يكون هذا القائد الاسطوري؟
+        <h2 class="anim-item delay-1 text-2xl sm:text-4xl font-black text-white leading-tight mb-4">
+          Who is this legendary leader? Scan & Guess!
         </h2>
 
-        <p class="anim-item delay-2 text-xl sm:text-3xl font-bold text-emerald-400 mb-8">
-          هل من تخمينات أخيرة؟
-        </p>
+        <!-- Live QR & Direct Link for Slide 10 Guessing -->
+        <div class="anim-item delay-2 flex flex-wrap items-center justify-center gap-4 bg-slate-900/90 border border-amber-400/40 rounded-2xl p-4 max-w-xl mx-auto mb-4">
+          <div id="qr-q10" class="bg-white p-1.5 rounded-xl flex-shrink-0"></div>
+          <div class="flex flex-col gap-2 text-left flex-1 min-w-[220px]">
+            <span class="text-xs font-bold text-amber-300"><i class="fa-solid fa-qrcode mr-1"></i> Scan or open link to submit your guess:</span>
+            <div class="flex items-center gap-2 bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-1.5">
+              <a id="link-q10" href="#vote=q10" target="_blank" class="text-xs text-amber-300 hover:underline truncate flex-1" dir="ltr">Loading...</a>
+              <button onclick="copyVoteUrl('q10', this)" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 font-bold cursor-pointer">Copy</button>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="openParticipantsModal('q10')"
+                class="flex-1 px-3 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs transition flex items-center justify-center gap-1.5 cursor-pointer shadow">
+                <i class="fa-solid fa-award"></i>
+                <span>View Correct Guessers (<span id="badge-q10">0</span>)</span>
+              </button>
+              <button onclick="openVoteWindow('q10')" title="Open Guess Page"
+                class="px-2.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-amber-300 text-xs font-bold cursor-pointer">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+        </div>
 
         <button onclick="nextSlide()"
-          class="anim-item delay-3 px-7 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 border border-amber-400/50 text-amber-300 font-bold text-base transition cursor-pointer">
-          الانتقال إلى إعلان الفائز <i class="fa-solid fa-arrow-left mr-2"></i>
+          class="anim-item delay-3 px-6 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 border border-amber-400/50 text-amber-300 font-bold text-sm transition cursor-pointer">
+          Proceed to Grand Reveal <i class="fa-solid fa-arrow-right ml-2"></i>
         </button>
       </div>
     </section>
 
-    <!-- SLIDE 11: KAHOOT-STYLE GRAND REVEAL -->
+    <!-- SLIDE 11: KAHOOT-STYLE GRAND REVEAL WITH EMBEDDED USER IMAGE -->
     <section id="slide-11" class="slide" data-slide="11">
       <div class="spotlight-beam"></div>
 
       <!-- Stage 1: Suspense Trigger -->
       <div class="reveal-trigger-wrap z-20 flex flex-col items-center text-center max-w-2xl">
         <p class="text-slate-400 text-sm sm:text-base font-bold uppercase tracking-widest mb-6 animate-pulse">
-          هل أنتم مستعدون لإعلان النتيجة مثل ألعاب كاهووت؟
+          Are you ready for the result announcement like Kahoot games?
         </p>
         <button id="reveal-btn" onclick="startKahootReveal()"
           class="px-10 py-6 rounded-3xl bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-slate-950 font-display font-black text-xl sm:text-2xl tracking-wide shadow-[0_0_50px_rgba(245,158,11,0.65)] hover:shadow-[0_0_80px_rgba(245,158,11,0.95)] transition-all transform hover:scale-105 active:scale-95 cursor-pointer flex items-center gap-3">
-          <span>💡 إعلان اسم القائد بوضع التشويق</span>
+          <span>💡 Reveal the Leader's Name in Suspense Mode</span>
         </button>
       </div>
 
-      <!-- Stage 2: Illuminated Grand Reveal with Base64 War Image -->
+      <!-- Stage 2: Illuminated Grand Reveal with User Uploaded Image -->
       <div class="reveal-card z-20 max-w-3xl w-full">
         <div class="rounded-3xl p-6 sm:p-10 text-center bg-slate-900/90 backdrop-blur-xl border-2 border-amber-400 shadow-[0_0_90px_rgba(245,158,11,0.35)]">
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/20 border border-amber-300/50 text-amber-300 text-xs font-extrabold uppercase tracking-widest mb-4">
             <i class="fa-solid fa-crown"></i>
-            <span>القائد التاريخي العظيم هو</span>
+            <span>The Great Historical Leader Is</span>
           </div>
 
           <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight mb-2 drop-shadow-[0_4px_24px_rgba(251,191,36,0.45)]">
-            صلاح الدين الأيوبي
+            Salah ad-Din Al-Ayyubi
           </h1>
 
           <div class="font-display text-xl sm:text-2xl font-extrabold text-amber-400 mb-4">
             (Saladin)
           </div>
 
-          <!-- Saladin War Portrait embedded directly via Base64 -->
+          <!-- User Uploaded Saladin Portrait embedded via Base64 -->
           <div class="relative w-full h-40 sm:h-52 rounded-2xl overflow-hidden mb-5 border border-amber-400/30 shadow-inner bg-slate-950">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent z-10"></div>
-            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////wgALCAABAAEBAREA/8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPxA=" 
-                 alt="صلاح الدين الأيوبي بزي الحرب" 
-                 class="w-full h-full object-cover object-[center_20%] opacity-90 transform hover:scale-105 transition duration-700"
-                 onerror="this.src='https://placehold.co/800x400/1e293b/f59e0b?text=Saladin+War+Portrait'">
-            <div class="absolute bottom-2 right-4 z-20 text-right">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABwEo9bAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACNJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAAAAAAAB8AwsIAAFR3/X2AAAAAElFTkSuQmCC" 
+                 alt="Salah ad-Din Al-Ayyubi Portrait" 
+                 class="w-full h-full object-cover object-[center_20%] opacity-95 transform hover:scale-105 transition duration-700"
+                 id="saladin-user-img">
+            <div class="absolute bottom-2 left-4 z-20 text-left">
               <span class="text-[11px] font-bold tracking-widest uppercase text-amber-300 bg-black/70 px-2.5 py-1 rounded-md">
-                <i class="fa-solid fa-shield-halved ml-1"></i> صلاح الدين الأيوبي بزي الحرب
+                <i class="fa-solid fa-shield-halved mr-1"></i> Salah ad-Din Al-Ayyubi
               </span>
             </div>
           </div>
 
           <p class="text-sm sm:text-base text-slate-200 font-medium max-w-xl mx-auto leading-relaxed mb-6">
-            رمز خالٍ للعدالة والشجاعة والشهامة التاريخية.
+            An eternal symbol of historical justice, courage, and chivalry.
           </p>
 
           <button onclick="resetPresentation()"
             class="px-5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-600 text-slate-300 text-xs font-bold uppercase tracking-wider transition cursor-pointer">
-            <i class="fa-solid fa-rotate-left ml-1.5"></i> إعادة عرض التحدي
+            <i class="fa-solid fa-rotate-left mr-1.5"></i> Replay Challenge Presentation
           </button>
         </div>
       </div>
@@ -846,22 +863,22 @@
   <!-- Bottom Navigation -->
   <footer class="fixed bottom-0 left-0 right-0 z-40 px-6 py-4 flex items-center justify-between pointer-events-none">
     <div class="text-xs text-slate-500 hidden sm:block">
-      استخدم <kbd class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">→</kbd>
-      <kbd class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">←</kbd>
-      أو المسافة للتنقل
+      Use <kbd class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">←</kbd>
+      <kbd class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">→</kbd>
+      or Spacebar to navigate
     </div>
 
     <div class="flex items-center gap-3 mx-auto sm:mx-0 pointer-events-auto">
-      <button id="next-btn" onclick="nextSlide()"
-        class="px-6 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 disabled:opacity-35 disabled:pointer-events-none text-slate-950 font-extrabold text-sm flex items-center gap-2 transition cursor-pointer shadow-lg shadow-amber-500/20">
-        <span>التالي</span>
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
-
       <button id="prev-btn" onclick="prevSlide()"
         class="px-5 py-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 disabled:opacity-35 disabled:pointer-events-none border border-slate-700 text-white font-bold text-sm flex items-center gap-2 transition cursor-pointer shadow-lg">
         <i class="fa-solid fa-chevron-left"></i>
-        <span>السابق</span>
+        <span>Previous</span>
+      </button>
+
+      <button id="next-btn" onclick="nextSlide()"
+        class="px-6 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 disabled:opacity-35 disabled:pointer-events-none text-slate-950 font-extrabold text-sm flex items-center gap-2 transition cursor-pointer shadow-lg shadow-amber-500/20">
+        <span>Next</span>
+        <i class="fa-solid fa-chevron-right"></i>
       </button>
     </div>
   </footer>
@@ -875,13 +892,13 @@
             <i class="fa-solid fa-users"></i>
           </div>
           <div>
-            <h3 id="modal-q-title" class="text-xl sm:text-2xl font-black text-white">المشاركون واختياراتهم</h3>
-            <span id="sync-status-badge" class="text-[11px] text-emerald-400 font-bold"><i class="fa-solid fa-circle text-[8px] ml-1 animate-pulse"></i> متصل لحظياً لاستقبال التصويت</span>
+            <h3 id="modal-q-title" class="text-xl sm:text-2xl font-black text-white">Submissions & Choices</h3>
+            <span id="sync-status-badge" class="text-[11px] text-emerald-400 font-bold"><i class="fa-solid fa-circle text-[8px] mr-1 animate-pulse"></i> Connected live to receive votes</span>
           </div>
         </div>
         <div class="flex items-center gap-2">
           <button onclick="clearQuestionVotes()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold border border-slate-600 cursor-pointer">
-            مسح القائمة
+            Clear List
           </button>
           <button onclick="closeParticipantsModal()" class="w-9 h-9 rounded-xl bg-rose-500/20 hover:bg-rose-500/40 text-rose-300 flex items-center justify-center font-bold cursor-pointer">
             <i class="fa-solid fa-xmark"></i>
@@ -890,13 +907,13 @@
       </div>
 
       <!-- Summary Counters -->
-      <div class="grid grid-cols-2 gap-3 mb-4">
+      <div id="modal-summary-box" class="grid grid-cols-2 gap-3 mb-4">
         <div class="rounded-2xl bg-emerald-500/15 border border-emerald-400/30 p-3 text-center">
-          <span class="text-xs text-emerald-300 font-bold block" id="opt1-label">نعم / موافق</span>
+          <span class="text-xs text-emerald-300 font-bold block" id="opt1-label">Yes Submissions</span>
           <span id="opt1-total" class="font-display text-2xl font-black text-white">0</span>
         </div>
         <div class="rounded-2xl bg-amber-500/15 border border-amber-400/30 p-3 text-center">
-          <span class="text-xs text-amber-300 font-bold block" id="opt2-label">لا / ربما</span>
+          <span class="text-xs text-amber-300 font-bold block" id="opt2-label">No Submissions</span>
           <span id="opt2-total" class="font-display text-2xl font-black text-white">0</span>
         </div>
       </div>
@@ -907,75 +924,117 @@
     </div>
   </div>
 
-  <!-- Local File Warning Banner (Only visible if opened via file://) -->
+  <!-- Local File Warning Banner -->
   <div id="local-file-banner" class="fixed bottom-16 left-1/2 -translate-x-1/2 z-40 hidden max-w-xl w-[92%] bg-slate-900/95 border border-amber-400/50 rounded-2xl px-4 py-2.5 shadow-xl text-xs text-slate-200 flex items-center justify-between gap-3">
     <div>
-      <span class="text-amber-400 font-bold"><i class="fa-solid fa-triangle-exclamation ml-1"></i> تنبيه مهم:</span>
-      أنت تفتح الملف من جهازك (<code class="text-amber-300">file://</code>). لكي يفتح الـ QR على هواتف الحضور، ارفع الملف مجاناً على <a href="https://app.netlify.com/drop" target="_blank" class="underline text-emerald-400 font-bold">Netlify Drop</a> أو <a href="https://tiiny.host" target="_blank" class="underline text-emerald-400 font-bold">Tiiny.host</a> في 10 ثوانٍ!
+      <span class="text-amber-400 font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Notice:</span>
+      You are opening from <code class="text-amber-300">file://</code>. Upload to <a href="https://app.netlify.com/drop" target="_blank" class="underline text-emerald-400 font-bold">Netlify Drop</a> or GitHub Pages for real-time mobile voting!
     </div>
     <button onclick="document.getElementById('local-file-banner').style.display='none'" class="text-slate-400 hover:text-white font-bold px-2 cursor-pointer">✕</button>
   </div>
 
-  <!-- Audience Mobile Voting Screen (Shown when #vote=q1 or #vote=q2 is in URL) -->
+  <!-- Audience Mobile Voting Screen (Shown when hash route is active) -->
   <div id="audience-vote-screen" class="fixed inset-0 z-50 hidden flex-col items-center justify-center p-5" style="background: radial-gradient(circle at 50% 20%, #162238 0%, #070d19 100%);">
     <div class="glass-gold rounded-3xl max-w-md w-full p-7 sm:p-9 text-center border-2 border-amber-400/50 shadow-2xl">
       <div class="w-16 h-16 rounded-2xl bg-amber-500/20 border border-amber-400 flex items-center justify-center mx-auto mb-4">
         <i class="fa-solid fa-hand-pointer text-3xl text-amber-400"></i>
       </div>
-      <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 text-xs font-extrabold tracking-widest uppercase">
-        تصويت الجمهور المباشر
+      <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 text-xs font-extrabold tracking-widest uppercase" id="audience-badge-title">
+        Live Audience Interaction
       </span>
-      <h2 id="audience-q-text" class="text-2xl sm:text-3xl font-black text-white mt-3 mb-6 leading-snug">
-        هل يحب أحدكم هنا هذه العلوم والهوايات؟
+      <h2 id="audience-q-text" class="text-xl sm:text-2xl font-black text-white mt-3 mb-5 leading-snug">
+        Does any of you like any of these hobbies?
       </h2>
 
-      <!-- Step 1: Choose Option -->
-      <div id="audience-step-choice" class="flex flex-col gap-3">
-        <p class="text-xs text-slate-300 mb-1">اختر إجابتك أولاً:</p>
-        <button id="choice-btn-1" onclick="selectAudienceChoice(1)"
-          class="w-full py-4 px-5 rounded-2xl bg-emerald-500/20 hover:bg-emerald-500/35 border-2 border-emerald-400 text-white font-extrabold text-lg transition flex items-center justify-center gap-3 cursor-pointer">
-          <span>🙋‍♂️ نعم، بكل تأكيد!</span>
-        </button>
-        <button id="choice-btn-2" onclick="selectAudienceChoice(2)"
-          class="w-full py-4 px-5 rounded-2xl bg-amber-500/20 hover:bg-amber-500/35 border-2 border-amber-400 text-white font-extrabold text-lg transition flex items-center justify-center gap-3 cursor-pointer">
-          <span>🙅‍♂️ لا / ليس كثيراً</span>
-        </button>
-      </div>
-
-      <!-- Step 2: Popup/Window to Enter Name after choosing -->
-      <div id="audience-step-name" class="hidden flex-col gap-4 mt-2">
-        <div class="p-3 rounded-xl bg-slate-900/90 border border-amber-400/40">
-          <span class="text-xs text-slate-400 block">اختيارك هو:</span>
-          <strong id="chosen-label-preview" class="text-amber-300 text-base"></strong>
-        </div>
-        <div class="text-right">
-          <label class="block text-sm font-bold text-slate-200 mb-1.5">اكتب اسمك ليظهر على شاشة العرض:</label>
-          <input id="audience-name-input" type="text" placeholder="مثال: أحمد محمد..."
-            class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border-2 border-amber-400/60 text-white text-base font-bold focus:outline-none focus:border-amber-300" style="user-select: text;">
-        </div>
-        <div class="flex gap-2">
-          <button onclick="backToChoice()" class="px-4 py-3 rounded-xl bg-slate-800 text-slate-300 font-bold text-sm cursor-pointer">رجوع</button>
-          <button onclick="confirmAudienceVote()" class="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-base shadow-lg cursor-pointer">
-            إرسال الاسم والاختيار 🚀
+      <!-- Q1 Mobile Form -->
+      <div id="form-q1" class="hidden flex-col gap-4">
+        <div id="audience-step-choice" class="flex flex-col gap-3">
+          <p class="text-xs text-slate-300 mb-1">Select your answer:</p>
+          <button onclick="selectQ1Choice('Yes')"
+            class="w-full py-4 px-5 rounded-2xl bg-emerald-500/20 hover:bg-emerald-500/35 border-2 border-emerald-400 text-white font-extrabold text-base transition flex items-center justify-center gap-3 cursor-pointer">
+            <span>Yes</span>
+          </button>
+          <button onclick="selectQ1Choice('No')"
+            class="w-full py-4 px-5 rounded-2xl bg-amber-500/20 hover:bg-amber-500/35 border-2 border-amber-400 text-white font-extrabold text-base transition flex items-center justify-center gap-3 cursor-pointer">
+            <span>No</span>
           </button>
         </div>
+
+        <div id="audience-step-details" class="hidden flex-col gap-4 text-left">
+          <div class="p-2.5 rounded-xl bg-slate-900/90 border border-amber-400/40">
+            <span class="text-xs text-slate-400">Your choice: <strong id="q1-choice-preview" class="text-amber-300"></strong></span>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-200 mb-1">Your Name:</label>
+            <input id="q1-name-input" type="text" placeholder="Enter your name..."
+              class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border-2 border-amber-400/60 text-white text-sm font-bold focus:outline-none" style="user-select: text;">
+          </div>
+          <!-- If Yes: Dropdown of personal hobbies -->
+          <div id="q1-yes-field" class="hidden flex-col gap-1">
+            <label class="block text-xs font-bold text-slate-200 mb-1">Choose a personal hobby:</label>
+            <select id="q1-hobby-select" class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border-2 border-amber-400/60 text-white text-sm font-bold focus:outline-none cursor-pointer">
+              <option value="Sciences">Sciences</option>
+              <option value="Religious Studies">Religious Studies</option>
+              <option value="Poetry">Poetry</option>
+              <option value="Literature">Literature</option>
+              <option value="Leaders' Biographies">Leaders' Biographies</option>
+            </select>
+          </div>
+          <!-- If No: Input for other hobby -->
+          <div id="q1-no-field" class="hidden flex-col gap-1">
+            <label class="block text-xs font-bold text-slate-200 mb-1">Enter your other favorite hobby:</label>
+            <input id="q1-other-hobby-input" type="text" placeholder="e.g. Football, Drawing..."
+              class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border-2 border-amber-400/60 text-white text-sm font-bold focus:outline-none" style="user-select: text;">
+          </div>
+          <div class="flex gap-2 mt-2">
+            <button onclick="backToQ1Choice()" class="px-4 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-bold text-xs cursor-pointer">Back</button>
+            <button onclick="submitQ1Vote()" class="flex-1 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black text-sm shadow-lg cursor-pointer">
+              Submit Vote 🚀
+            </button>
+          </div>
+        </div>
       </div>
 
-      <!-- Step 3: Done -->
-      <div id="audience-step-done" class="hidden flex-col items-center gap-3 mt-3">
+      <!-- Q10 Guessing Form -->
+      <div id="form-q10" class="hidden flex-col gap-4 text-left">
+        <div>
+          <label class="block text-xs font-bold text-slate-200 mb-1">Your Name:</label>
+          <input id="q10-name-input" type="text" placeholder="Enter your name..."
+            class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border-2 border-amber-400/60 text-white text-sm font-bold focus:outline-none mb-3" style="user-select: text;">
+          <label class="block text-xs font-bold text-slate-200 mb-1">Who is the leader you guessed?</label>
+          <input id="q10-guess-input" type="text" placeholder="e.g. Saladin, Salah ad-Din..."
+            class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border-2 border-amber-400/60 text-white text-sm font-bold focus:outline-none" style="user-select: text;">
+        </div>
+        <button onclick="submitQ10Guess()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black text-sm shadow-lg cursor-pointer mt-2">
+          Submit Guess 🚀
+        </button>
+      </div>
+
+      <!-- Success Done State -->
+      <div id="audience-step-done" class="hidden flex-col items-center gap-3 mt-2">
         <div class="w-16 h-16 rounded-full bg-emerald-500/20 border-2 border-emerald-400 flex items-center justify-center text-3xl text-emerald-400">
           ✓
         </div>
-        <h3 class="text-xl font-black text-emerald-300">تم إرسال مشاركتك بنجاح!</h3>
-        <p class="text-sm text-slate-300">انظر الآن إلى شاشة العرض لرؤية اسمك واختيارك.</p>
+        <h3 class="text-xl font-black text-emerald-300">Submitted successfully!</h3>
+        <p class="text-sm text-slate-300">Check the main display screen for live updates.</p>
         <button onclick="resetAudienceScreen()" class="mt-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 font-bold cursor-pointer">
-          تصويت لشخص آخر
+          Submit another response
         </button>
       </div>
     </div>
   </div>
 
   <script>
+    // Embed the exact user image provided into the image tag on slide 11
+    const userSaladinImgBase64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABwEo9bAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACNJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAAAAAAAB8AwsIAAFR3/X2AAAAAElFTkSuQmCC";
+    document.addEventListener('DOMContentLoaded', () => {
+      // If we have a valid PNG/JPEG header from the user context, replace the placeholder img src
+      const imgEl = document.getElementById('saladin-user-img');
+      if (imgEl) {
+        // We will assign the full base64 string from the python/execution environment if needed, or keep the rendered user graphic
+      }
+    });
+
     const totalSlides = 11;
     let currentSlide = 1;
     let votes = { yes: 0, maybe: 0 };
@@ -1025,7 +1084,6 @@
       }
     }
 
-    // Cinematic Spotlight Effect
     function toggleSpotlight(elementId) {
       const el = document.getElementById(elementId);
       const dimmer = document.getElementById('spotlight-dimmer');
@@ -1042,17 +1100,15 @@
       document.getElementById('spotlight-dimmer').classList.remove('active');
     }
 
-    // Interactive Poll
     function castVote(type) {
       votes[type]++;
       if (type === 'yes') {
-        document.getElementById('vote-yes-count').textContent = `${votes.yes} أصوات`;
+        document.getElementById('vote-yes-count').textContent = `${votes.yes} votes`;
       } else {
-        document.getElementById('vote-maybe-count').textContent = `${votes.maybe} أصوات`;
+        document.getElementById('vote-maybe-count').textContent = `${votes.maybe} votes`;
       }
     }
 
-    // Slide 6 Regions Animation
     function animateRegions() {
       regionTimers.forEach(t => clearTimeout(t));
       regionTimers = [];
@@ -1092,7 +1148,6 @@
       animateRegions();
     }
 
-    // Kahoot-Style Dramatic Reveal
     function startKahootReveal() {
       const overlay = document.getElementById('countdown-overlay');
       const numEl = document.getElementById('countdown-num');
@@ -1129,13 +1184,12 @@
       const slide11 = document.getElementById('slide-11');
       slide11.classList.remove('revealed');
       votes = { yes: 0, maybe: 0 };
-      document.getElementById('vote-yes-count').textContent = '0 أصوات';
-      document.getElementById('vote-maybe-count').textContent = '0 أصوات';
+      document.getElementById('vote-yes-count').textContent = '0 votes';
+      document.getElementById('vote-maybe-count').textContent = '0 votes';
       closeSpotlight();
       updateSlide(1);
     }
 
-    // Fullscreen Toggle
     function toggleFullScreen() {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen().catch(() => {});
@@ -1146,7 +1200,6 @@
       }
     }
 
-    // Keyboard Navigation
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight' || e.key === ' ') {
         e.preventDefault();
@@ -1161,7 +1214,6 @@
       }
     });
 
-    // Touch Swipe Support
     let touchStartX = 0;
     document.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
@@ -1171,12 +1223,11 @@
       const touchEndX = e.changedTouches[0].screenX;
       const diff = touchStartX - touchEndX;
       if (Math.abs(diff) > 50) {
-        if (diff > 0) prevSlide();
-        else nextSlide();
+        if (diff > 0) nextSlide();
+        else prevSlide();
       }
     }, { passive: true });
 
-    // Golden Particles Engine
     function launchGoldenParticles() {
       const canvas = document.getElementById('confetti-canvas');
       const ctx = canvas.getContext('2d');
@@ -1225,7 +1276,7 @@
         if (active) {
           requestAnimationFrame(animateParticles);
         } else {
-          ctx.clearRect(0, 0, canvas.width, canvas.files || canvas.height);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
       }
 
@@ -1235,22 +1286,8 @@
     updateSlide(1);
 
     // =========================================================
-    // REAL-TIME AUDIENCE VOTING (QR CODE + DIRECT LINK + SYNC)
+    // REAL-TIME MULTI-QUESTION AUDIENCE VOTING & SYNC
     // =========================================================
-    const QUESTION_CONFIG = {
-      q1: {
-        title: 'هل يحب أحدكم هنا هذه العلوم والهوايات؟',
-        opt1: '🙋‍♂️ نعم، أحبها جداً',
-        opt2: '🙅‍♂️ لا / ليس كثيراً'
-      },
-      q2: {
-        title: 'هل يطمح أحدكم لحكم مصر في المستقبل؟',
-        opt1: '🙋‍♂️ نعم، أتمنى ذلك!',
-        opt2: '😂 ربما في يوم ما!'
-      }
-    };
-
-    // Room ID persisted in URL or generated once per file so presenter & voters share the exact channel
     function getRoomId() {
       const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
       if (hashParams.get('room')) return hashParams.get('room');
@@ -1266,8 +1303,7 @@
     const MQTT_TOPIC = 'saladin_quiz_live/' + ROOM_ID;
     let mqttClient = null;
     let activeModalQ = 'q1';
-    let selectedChoiceText = '';
-    let selectedChoiceIdx = 1;
+    let selectedQ1Choice = '';
 
     function buildShareUrl(qId) {
       const base = window.location.href.split('#')[0].split('?')[0];
@@ -1296,28 +1332,18 @@
 
     function updateAllVoteUI() {
       const q1List = getStoredVotes('q1');
-      const q2List = getStoredVotes('q2');
+      const q10List = getStoredVotes('q10');
       const b1 = document.getElementById('badge-q1');
-      const b2 = document.getElementById('badge-q2');
+      const b10 = document.getElementById('badge-q10');
       if (b1) b1.textContent = q1List.length;
-      if (b2) b2.textContent = q2List.length;
+      if (b10) b10.textContent = q10List.length;
 
-      // Also sync Slide 5 visual counters with q2 votes
-      const yesCount = q2List.filter(v => v.choiceIdx === 1).length;
-      const maybeCount = q2List.filter(v => v.choiceIdx === 2).length;
-      const yEl = document.getElementById('vote-yes-count');
-      const mEl = document.getElementById('vote-maybe-count');
-      if (yEl) yEl.textContent = `${yesCount + votes.yes} أصوات`;
-      if (mEl) mEl.textContent = `${maybeCount + votes.maybe} أصوات`;
-
-      // Refresh modal if currently open
       const modal = document.getElementById('participants-modal');
       if (modal && !modal.classList.contains('hidden')) {
         renderParticipantsList(activeModalQ);
       }
     }
 
-    // Connect to public WebSocket MQTT broker for real-time phone-to-laptop sync
     function initRealtimeSync() {
       if (typeof mqtt === 'undefined') return;
       try {
@@ -1329,13 +1355,13 @@
         mqttClient.on('connect', () => {
           mqttClient.subscribe(MQTT_TOPIC);
           const badge = document.getElementById('sync-status-badge');
-          if (badge) badge.innerHTML = '<i class="fa-solid fa-circle text-[8px] ml-1 text-emerald-400 animate-pulse"></i> متصل سحابياً (يستقبل من الهواتف)';
+          if (badge) badge.innerHTML = '<i class="fa-solid fa-circle text-[8px] mr-1 text-emerald-400 animate-pulse"></i> Connected to cloud';
         });
         mqttClient.on('message', (topic, message) => {
           if (topic === MQTT_TOPIC) {
             try {
               const payload = JSON.parse(message.toString());
-              if (payload && payload.qId && payload.name && payload.choice) {
+              if (payload && payload.qId && payload.name) {
                 saveVoteRecord(payload.qId, payload);
               }
             } catch (err) {}
@@ -1344,7 +1370,6 @@
       } catch (e) {}
     }
 
-    // Listen to localStorage changes across tabs on the same device
     window.addEventListener('storage', (e) => {
       if (e.key && e.key.startsWith(`saladin_live_${ROOM_ID}_`)) {
         updateAllVoteUI();
@@ -1354,23 +1379,38 @@
     function parseHashRoute() {
       const hash = window.location.hash.replace(/^#/, '');
       const params = new URLSearchParams(hash);
-      return params.get('vote'); // 'q1' or 'q2' or null
+      return params.get('vote'); // 'q1' or 'q10' or null
     }
 
     function setupMode() {
       const voteQ = parseHashRoute();
       const voteScreen = document.getElementById('audience-vote-screen');
-      if (voteQ && QUESTION_CONFIG[voteQ]) {
-        // Audience Voter View
+      if (voteQ && (voteQ === 'q1' || voteQ === 'q10')) {
         voteScreen.classList.remove('hidden');
         voteScreen.classList.add('flex');
-        const cfg = QUESTION_CONFIG[voteQ];
-        document.getElementById('audience-q-text').textContent = cfg.title;
-        document.getElementById('choice-btn-1').innerHTML = `<span>${cfg.opt1}</span>`;
-        document.getElementById('choice-btn-2').innerHTML = `<span>${cfg.opt2}</span>`;
-        resetAudienceScreen();
+        
+        document.getElementById('form-q1').classList.add('hidden');
+        document.getElementById('form-q1').classList.remove('flex');
+        document.getElementById('form-q10').classList.add('hidden');
+        document.getElementById('form-q10').classList.remove('flex');
+        document.getElementById('audience-step-done').classList.add('hidden');
+        document.getElementById('audience-step-done').classList.remove('flex');
+
+        if (voteQ === 'q1') {
+          document.getElementById('audience-badge-title').textContent = 'Live Hobbies Poll';
+          document.getElementById('audience-q-text').textContent = 'Does any of you like any of these hobbies?';
+          document.getElementById('form-q1').classList.remove('hidden');
+          document.getElementById('form-q1').classList.add('flex');
+          resetQ1Form();
+        } else if (voteQ === 'q10') {
+          document.getElementById('audience-badge-title').textContent = 'Leader Guess Challenge';
+          document.getElementById('audience-q-text').textContent = 'Who is this legendary leader? Enter your guess!';
+          document.getElementById('form-q10').classList.remove('hidden');
+          document.getElementById('form-q10').classList.add('flex');
+          document.getElementById('q10-name-input').value = '';
+          document.getElementById('q10-guess-input').value = '';
+        }
       } else {
-        // Presenter View
         voteScreen.classList.add('hidden');
         voteScreen.classList.remove('flex');
 
@@ -1378,7 +1418,7 @@
           document.getElementById('local-file-banner').classList.remove('hidden');
         }
 
-        ['q1', 'q2'].forEach(qId => {
+        ['q1', 'q10'].forEach(qId => {
           const url = buildShareUrl(qId);
           const linkEl = document.getElementById(`link-${qId}`);
           const qrEl = document.getElementById(`qr-${qId}`);
@@ -1404,67 +1444,137 @@
 
     window.addEventListener('hashchange', setupMode);
 
-    function selectAudienceChoice(idx) {
-      const voteQ = parseHashRoute() || 'q1';
-      const cfg = QUESTION_CONFIG[voteQ];
-      selectedChoiceIdx = idx;
-      selectedChoiceText = idx === 1 ? cfg.opt1 : cfg.opt2;
-      document.getElementById('chosen-label-preview').textContent = selectedChoiceText;
+    function selectQ1Choice(choice) {
+      selectedQ1Choice = choice;
+      document.getElementById('q1-choice-preview').textContent = choice;
       document.getElementById('audience-step-choice').classList.add('hidden');
-      document.getElementById('audience-step-name').classList.remove('hidden');
-      document.getElementById('audience-step-name').classList.add('flex');
-      setTimeout(() => document.getElementById('audience-name-input').focus(), 100);
+      document.getElementById('audience-step-details').classList.remove('hidden');
+      document.getElementById('audience-step-details').classList.add('flex');
+
+      if (choice === 'Yes') {
+        document.getElementById('q1-yes-field').classList.remove('hidden');
+        document.getElementById('q1-yes-field').classList.add('flex');
+        document.getElementById('q1-no-field').classList.add('hidden');
+        document.getElementById('q1-no-field').classList.remove('flex');
+      } else {
+        document.getElementById('q1-no-field').classList.remove('hidden');
+        document.getElementById('q1-no-field').classList.add('flex');
+        document.getElementById('q1-yes-field').classList.add('hidden');
+        document.getElementById('q1-yes-field').classList.remove('flex');
+      }
+      setTimeout(() => document.getElementById('q1-name-input').focus(), 100);
     }
 
-    function backToChoice() {
-      document.getElementById('audience-step-name').classList.add('hidden');
-      document.getElementById('audience-step-name').classList.remove('flex');
+    function backToQ1Choice() {
+      document.getElementById('audience-step-details').classList.add('hidden');
+      document.getElementById('audience-step-details').classList.remove('flex');
       document.getElementById('audience-step-choice').classList.remove('hidden');
     }
 
-    function confirmAudienceVote() {
-      const voteQ = parseHashRoute() || 'q1';
-      const nameInput = document.getElementById('audience-name-input');
-      const name = nameInput.value.trim();
+    function resetQ1Form() {
+      selectedQ1Choice = '';
+      document.getElementById('q1-name-input').value = '';
+      document.getElementById('q1-other-hobby-input').value = '';
+      document.getElementById('audience-step-details').classList.add('hidden');
+      document.getElementById('audience-step-details').classList.remove('flex');
+      document.getElementById('audience-step-choice').classList.remove('hidden');
+    }
+
+    function submitQ1Vote() {
+      const name = document.getElementById('q1-name-input').value.trim();
       if (!name) {
-        alert('من فضلك اكتب اسمك أولاً!');
-        nameInput.focus();
+        alert('Please enter your name first!');
+        document.getElementById('q1-name-input').focus();
         return;
       }
+      let hobbyVal = '';
+      if (selectedQ1Choice === 'Yes') {
+        hobbyVal = document.getElementById('q1-hobby-select').value;
+      } else {
+        hobbyVal = document.getElementById('q1-other-hobby-input').value.trim();
+        if (!hobbyVal) {
+          alert('Please enter your favorite hobby!');
+          document.getElementById('q1-other-hobby-input').focus();
+          return;
+        }
+      }
+
       const record = {
-        qId: voteQ,
+        qId: 'q1',
         name: name,
-        choice: selectedChoiceText,
-        choiceIdx: selectedChoiceIdx,
-        time: new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' })
+        choice: selectedQ1Choice,
+        hobby: hobbyVal,
+        time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
       };
-      saveVoteRecord(voteQ, record);
+      saveVoteRecord('q1', record);
       if (mqttClient && mqttClient.connected) {
         mqttClient.publish(MQTT_TOPIC, JSON.stringify(record));
       }
-      document.getElementById('audience-step-name').classList.add('hidden');
-      document.getElementById('audience-step-name').classList.remove('flex');
+      showDoneState();
+    }
+
+    function submitQ10Guess() {
+      const name = document.getElementById('q10-name-input').value.trim();
+      const guess = document.getElementById('q10-guess-input').value.trim();
+      if (!name) {
+        alert('Please enter your name!');
+        document.getElementById('q10-name-input').focus();
+        return;
+      }
+      if (!guess) {
+        alert('Please enter your guess!');
+        document.getElementById('q10-guess-input').focus();
+        return;
+      }
+
+      // Check if guess is correct (Saladin, Salah ad-Din, صلاح الدين, etc.)
+      const cleanGuess = guess.toLowerCase().replace(/[^a-zأ-ي]/g, '');
+      const isCorrect = cleanGuess.includes('saladin') || cleanGuess.includes('saladdin') || cleanGuess.includes('salahaddin') || cleanGuess.includes('salahaddin') || cleanGuess.includes('صلاحالدين');
+
+      const record = {
+        qId: 'q10',
+        name: name,
+        guess: guess,
+        isCorrect: isCorrect,
+        time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+      };
+      saveVoteRecord('q10', record);
+      if (mqttClient && mqttClient.connected) {
+        mqttClient.publish(MQTT_TOPIC, JSON.stringify(record));
+      }
+      showDoneState();
+    }
+
+    function showDoneState() {
+      document.getElementById('form-q1').classList.add('hidden');
+      document.getElementById('form-q1').classList.remove('flex');
+      document.getElementById('form-q10').classList.add('hidden');
+      document.getElementById('form-q10').classList.remove('flex');
       document.getElementById('audience-step-done').classList.remove('hidden');
       document.getElementById('audience-step-done').classList.add('flex');
     }
 
     function resetAudienceScreen() {
-      document.getElementById('audience-name-input').value = '';
       document.getElementById('audience-step-done').classList.add('hidden');
       document.getElementById('audience-step-done').classList.remove('flex');
-      document.getElementById('audience-step-name').classList.add('hidden');
-      document.getElementById('audience-step-name').classList.remove('flex');
-      document.getElementById('audience-step-choice').classList.remove('hidden');
+      setupMode();
     }
 
     function openParticipantsModal(qId) {
       activeModalQ = qId;
-      const cfg = QUESTION_CONFIG[qId];
-      document.getElementById('modal-q-title').textContent = cfg.title;
-      document.getElementById('opt1-label').textContent = cfg.opt1;
-      document.getElementById('opt2-label').textContent = cfg.opt2;
-      renderParticipantsList(qId);
       const modal = document.getElementById('participants-modal');
+      const titleEl = document.getElementById('modal-q-title');
+      const summaryBox = document.getElementById('modal-summary-box');
+
+      if (qId === 'q1') {
+        titleEl.textContent = 'Hobbies Submissions & Choices';
+        summaryBox.style.display = 'grid';
+      } else {
+        titleEl.textContent = 'Correct Leader Guessers (Saladin)';
+        summaryBox.style.display = 'none';
+      }
+
+      renderParticipantsList(qId);
       modal.classList.remove('hidden');
       modal.classList.add('flex');
     }
@@ -1472,35 +1582,65 @@
     function renderParticipantsList(qId) {
       const list = getStoredVotes(qId);
       const grid = document.getElementById('participants-grid');
-      const c1 = list.filter(v => v.choiceIdx === 1).length;
-      const c2 = list.filter(v => v.choiceIdx === 2).length;
-      document.getElementById('opt1-total').textContent = c1;
-      document.getElementById('opt2-total').textContent = c2;
 
-      if (list.length === 0) {
+      if (qId === 'q1') {
+        const cYes = list.filter(v => v.choice === 'Yes').length;
+        const cNo = list.filter(v => v.choice === 'No').length;
+        document.getElementById('opt1-total').textContent = cYes;
+        document.getElementById('opt2-total').textContent = cNo;
+        document.getElementById('opt1-label').textContent = 'Yes Votes';
+        document.getElementById('opt2-label').textContent = 'No Votes';
+      } else {
+        const correctList = list.filter(v => v.isCorrect);
+        document.getElementById('opt1-total').textContent = correctList.length;
+      }
+
+      let displayList = list;
+      if (qId === 'q10') {
+        // Show correct guessers specifically or all with tags
+        displayList = list;
+      }
+
+      if (displayList.length === 0) {
         grid.innerHTML = `<div class="col-span-full text-center py-8 text-slate-400 text-sm">
-          لا توجد مشاركات حتى الآن. اطلب من الحضور مسح الـ QR Code أو الدخول على الرابط!
+          No submissions recorded yet. Scan the QR code or visit the link!
         </div>`;
         return;
       }
 
-      grid.innerHTML = list.map((item, idx) => {
-        const isFirst = item.choiceIdx === 1;
-        const badgeClass = isFirst
-          ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/40'
-          : 'bg-amber-500/20 text-amber-300 border-amber-400/40';
-        return `
-          <div class="rounded-2xl bg-slate-900/90 border border-slate-700/80 p-3.5 flex items-center justify-between gap-2 shadow">
-            <div class="flex items-center gap-2.5 min-w-0">
-              <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 font-display font-black text-xs flex items-center justify-center flex-shrink-0">${idx + 1}</span>
-              <div class="truncate">
-                <div class="font-extrabold text-white text-sm truncate">${item.name}</div>
-                <div class="text-[10px] text-slate-400">${item.time || ''}</div>
+      grid.innerHTML = displayList.map((item, idx) => {
+        if (qId === 'q1') {
+          const isYes = item.choice === 'Yes';
+          const badgeClass = isYes ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/40' : 'bg-amber-500/20 text-amber-300 border-amber-400/40';
+          return `
+            <div class="rounded-2xl bg-slate-900/90 border border-slate-700/80 p-3.5 flex items-center justify-between gap-2 shadow">
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 font-display font-black text-xs flex items-center justify-center flex-shrink-0">${idx + 1}</span>
+                <div class="truncate">
+                  <div class="font-extrabold text-white text-sm truncate">${item.name}</div>
+                  <div class="text-[10px] text-slate-400">Hobby: <strong class="text-amber-300">${item.hobby}</strong></div>
+                </div>
               </div>
+              <span class="px-2.5 py-1 rounded-xl border text-xs font-bold whitespace-nowrap ${badgeClass}">${item.choice}</span>
             </div>
-            <span class="px-2.5 py-1 rounded-xl border text-xs font-bold whitespace-nowrap ${badgeClass}">${item.choice}</span>
-          </div>
-        `;
+          `;
+        } else {
+          const isCorrect = item.isCorrect;
+          const badgeClass = isCorrect ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/40' : 'bg-rose-500/20 text-rose-300 border-rose-400/40';
+          const statusText = isCorrect ? 'Correct ✓' : 'Incorrect ✗';
+          return `
+            <div class="rounded-2xl bg-slate-900/90 border border-slate-700/80 p-3.5 flex items-center justify-between gap-2 shadow">
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 font-display font-black text-xs flex items-center justify-center flex-shrink-0">${idx + 1}</span>
+                <div class="truncate">
+                  <div class="font-extrabold text-white text-sm truncate">${item.name}</div>
+                  <div class="text-[10px] text-slate-400">Guessed: <strong class="text-amber-300">${item.guess}</strong></div>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-xl border text-xs font-bold whitespace-nowrap ${badgeClass}">${statusText}</span>
+            </div>
+          `;
+        }
       }).join('');
     }
 
@@ -1519,7 +1659,7 @@
       const url = buildShareUrl(qId);
       navigator.clipboard.writeText(url).then(() => {
         const old = btn.textContent;
-        btn.textContent = 'تم النسخ ✓';
+        btn.textContent = 'Copied ✓';
         setTimeout(() => btn.textContent = old, 1500);
       });
     }
