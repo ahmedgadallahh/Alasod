@@ -846,6 +846,21 @@
             </div>
           </div>
 
+          
+          <!-- Winners / Correct Guessers List below Saladin Image -->
+          <div id="slide11-winners-section" class="mb-5 text-left bg-slate-950/80 border border-emerald-400/40 rounded-2xl p-4">
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-trophy text-amber-400"></i>
+                <span>Champions Who Guessed Correctly:</span>
+              </span>
+              <span id="slide11-winners-count" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300">0</span>
+            </div>
+            <div id="slide11-winners-list" class="flex flex-wrap gap-2 max-h-28 overflow-y-auto">
+              <span class="text-xs text-slate-400 italic">No correct guesses recorded yet.</span>
+            </div>
+          </div>
+
           <p class="text-sm sm:text-base text-slate-200 font-medium max-w-xl mx-auto leading-relaxed mb-6">
             An eternal symbol of historical justice, courage, and chivalry.
           </p>
@@ -990,6 +1005,27 @@
             <button onclick="backToQ1Choice()" class="px-4 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-bold text-xs cursor-pointer">Back</button>
             <button onclick="submitQ1Vote()" class="flex-1 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black text-sm shadow-lg cursor-pointer">
               Submit Vote 🚀
+            </button>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- Q2 Mobile Form (Slide 5 Poll) -->
+      <div id="form-q2" class="hidden flex-col gap-4 text-left">
+        <div>
+          <label class="block text-xs font-bold text-slate-200 mb-1">Your Name:</label>
+          <input id="q2-name-input" type="text" placeholder="Enter your name..."
+            class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border-2 border-emerald-400/60 text-white text-sm font-bold focus:outline-none mb-3" style="user-select: text;">
+          <label class="block text-xs font-bold text-slate-200 mb-2">Choose your answer:</label>
+          <div class="flex flex-col gap-2.5">
+            <button onclick="submitQ2Vote('Yes, I wish so!')"
+              class="w-full py-3.5 px-4 rounded-xl bg-amber-500/20 hover:bg-amber-500/35 border-2 border-amber-400 text-white font-extrabold text-sm transition flex items-center justify-center gap-2 cursor-pointer">
+              <span>🙋‍♂️ Yes, I wish so!</span>
+            </button>
+            <button onclick="submitQ2Vote('Maybe one day!')"
+              class="w-full py-3.5 px-4 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/35 border-2 border-emerald-400 text-white font-extrabold text-sm transition flex items-center justify-center gap-2 cursor-pointer">
+              <span>😂 Maybe one day!</span>
             </button>
           </div>
         </div>
@@ -1322,16 +1358,61 @@
 
     function updateAllVoteUI() {
       const q1List = getStoredVotes('q1');
+      const q2List = getStoredVotes('q2');
       const q10List = getStoredVotes('q10');
+
       const b1 = document.getElementById('badge-q1');
+      const b2 = document.getElementById('badge-q2');
       const b10 = document.getElementById('badge-q10');
       if (b1) b1.textContent = q1List.length;
+      if (b2) b2.textContent = q2List.length;
       if (b10) b10.textContent = q10List.length;
+
+      // Update Slide 5 vote counters from remote participants + local clicks
+      const remoteYes = q2List.filter(v => v.choice === 'Yes, I wish so!').length;
+      const remoteMaybe = q2List.filter(v => v.choice === 'Maybe one day!').length;
+      const yesEl = document.getElementById('vote-yes-count');
+      const maybeEl = document.getElementById('vote-maybe-count');
+      if (yesEl) yesEl.textContent = `${votes.yes + remoteYes} votes`;
+      if (maybeEl) maybeEl.textContent = `${votes.maybe + remoteMaybe} votes`;
+
+      // Update Slide 11 Winners List (Only Correct Guessers!)
+      renderSlide11Winners(q10List);
 
       const modal = document.getElementById('participants-modal');
       if (modal && !modal.classList.contains('hidden')) {
         renderParticipantsList(activeModalQ);
       }
+    }
+
+    function renderSlide11Winners(q10List) {
+      const winnersContainer = document.getElementById('slide11-winners-list');
+      const countBadge = document.getElementById('slide11-winners-count');
+      if (!winnersContainer || !countBadge) return;
+
+      const correctGuessers = q10List.filter(item => item.isCorrect === true);
+      countBadge.textContent = correctGuessers.length;
+
+      if (correctGuessers.length === 0) {
+        winnersContainer.innerHTML = `<span class="text-xs text-slate-400 italic">No correct guesses recorded yet.</span>`;
+        return;
+      }
+
+      winnersContainer.innerHTML = correctGuessers.map(w => `
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-400/50 text-xs shadow">
+          <i class="fa-solid fa-circle-check text-emerald-400"></i>
+          <span class="font-extrabold text-white">${escapeHtml(w.name)}</span>
+          <span class="text-amber-300 font-semibold">(${escapeHtml(w.guess)})</span>
+        </div>
+      `).join('');
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
     }
 
     function initRealtimeSync() {
@@ -1369,22 +1450,23 @@
     function parseHashRoute() {
       const hash = window.location.hash.replace(/^#/, '');
       const params = new URLSearchParams(hash);
-      return params.get('vote'); // 'q1' or 'q10' or null
+      return params.get('vote'); // 'q1', 'q2', 'q10' or null
     }
 
     function setupMode() {
       const voteQ = parseHashRoute();
       const voteScreen = document.getElementById('audience-vote-screen');
-      if (voteQ && (voteQ === 'q1' || voteQ === 'q10')) {
+      if (voteQ && (voteQ === 'q1' || voteQ === 'q2' || voteQ === 'q10')) {
         voteScreen.classList.remove('hidden');
         voteScreen.classList.add('flex');
         
-        document.getElementById('form-q1').classList.add('hidden');
-        document.getElementById('form-q1').classList.remove('flex');
-        document.getElementById('form-q10').classList.add('hidden');
-        document.getElementById('form-q10').classList.remove('flex');
-        document.getElementById('audience-step-done').classList.add('hidden');
-        document.getElementById('audience-step-done').classList.remove('flex');
+        ['form-q1', 'form-q2', 'form-q10', 'audience-step-done'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.classList.add('hidden');
+            el.classList.remove('flex');
+          }
+        });
 
         if (voteQ === 'q1') {
           document.getElementById('audience-badge-title').textContent = 'Live Hobbies Poll';
@@ -1392,6 +1474,12 @@
           document.getElementById('form-q1').classList.remove('hidden');
           document.getElementById('form-q1').classList.add('flex');
           resetQ1Form();
+        } else if (voteQ === 'q2') {
+          document.getElementById('audience-badge-title').textContent = 'Slide 5 Live Audience Poll';
+          document.getElementById('audience-q-text').textContent = 'Does anyone among you aspire to rule Egypt in the future?';
+          document.getElementById('form-q2').classList.remove('hidden');
+          document.getElementById('form-q2').classList.add('flex');
+          document.getElementById('q2-name-input').value = '';
         } else if (voteQ === 'q10') {
           document.getElementById('audience-badge-title').textContent = 'Leader Guess Challenge';
           document.getElementById('audience-q-text').textContent = 'Who is this legendary leader? Enter your guess!';
@@ -1408,7 +1496,7 @@
           document.getElementById('local-file-banner').classList.remove('hidden');
         }
 
-        ['q1', 'q10'].forEach(qId => {
+        ['q1', 'q2', 'q10'].forEach(qId => {
           const url = buildShareUrl(qId);
           const linkEl = document.getElementById(`link-${qId}`);
           const qrEl = document.getElementById(`qr-${qId}`);
@@ -1503,6 +1591,49 @@
       showDoneState();
     }
 
+    function submitQ2Vote(choiceLabel) {
+      const name = document.getElementById('q2-name-input').value.trim();
+      if (!name) {
+        alert('Please enter your name first!');
+        document.getElementById('q2-name-input').focus();
+        return;
+      }
+      const record = {
+        qId: 'q2',
+        name: name,
+        choice: choiceLabel,
+        time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+      };
+      saveVoteRecord('q2', record);
+      if (mqttClient && mqttClient.connected) {
+        mqttClient.publish(MQTT_TOPIC, JSON.stringify(record));
+      }
+      showDoneState();
+    }
+
+    function checkSaladinMatch(rawGuess) {
+      // Normalize Arabic & English text so any valid spelling of Saladin / صلاح الدين is recognized
+      const normalized = rawGuess
+        .toLowerCase()
+        .replace(/[أإآ]/g, 'ا')
+        .replace(/ة/g, 'ه')
+        .replace(/ى/g, 'ي')
+        .replace(/[^a-zء-ي]/g, '');
+
+      const validKeywords = [
+        'saladin',
+        'saladdin',
+        'salahaddin',
+        'salahaldin',
+        'salaheddin',
+        'salahuddin',
+        'صلاحالدين',
+        'صلاحالدينالايوبي'
+      ];
+
+      return validKeywords.some(kw => normalized.includes(kw));
+    }
+
     function submitQ10Guess() {
       const name = document.getElementById('q10-name-input').value.trim();
       const guess = document.getElementById('q10-guess-input').value.trim();
@@ -1517,8 +1648,8 @@
         return;
       }
 
-      const cleanGuess = guess.toLowerCase().replace(/[^a-zأ-ي]/g, '');
-      const isCorrect = cleanGuess.includes('saladin') || cleanGuess.includes('saladdin') || cleanGuess.includes('salahaddin') || cleanGroupMatch(cleanGuess, ['صلاحالدين']);
+      // Allow ANY guess (correct or incorrect) to be saved and recorded
+      const isCorrect = checkSaladinMatch(guess);
 
       const record = {
         qId: 'q10',
@@ -1535,10 +1666,13 @@
     }
 
     function showDoneState() {
-      document.getElementById('form-q1').classList.add('hidden');
-      document.getElementById('form-q1').classList.remove('flex');
-      document.getElementById('form-q10').classList.add('hidden');
-      document.getElementById('form-q10').classList.remove('flex');
+      ['form-q1', 'form-q2', 'form-q10'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.classList.add('hidden');
+          el.classList.remove('flex');
+        }
+      });
       document.getElementById('audience-step-done').classList.remove('hidden');
       document.getElementById('audience-step-done').classList.add('flex');
     }
@@ -1558,9 +1692,12 @@
       if (qId === 'q1') {
         titleEl.textContent = 'Hobbies Submissions & Choices';
         summaryBox.style.display = 'grid';
+      } else if (qId === 'q2') {
+        titleEl.textContent = 'Rule Egypt Poll — Participants';
+        summaryBox.style.display = 'grid';
       } else {
-        titleEl.textContent = 'Correct Leader Guessers (Saladin)';
-        summaryBox.style.display = 'none';
+        titleEl.textContent = 'All Submitted Guesses (Slide 10)';
+        summaryBox.style.display = 'grid';
       }
 
       renderParticipantsList(qId);
@@ -1579,21 +1716,30 @@
         document.getElementById('opt2-total').textContent = cNo;
         document.getElementById('opt1-label').textContent = 'Yes Votes';
         document.getElementById('opt2-label').textContent = 'No Votes';
+      } else if (qId === 'q2') {
+        const cYes = list.filter(v => v.choice === 'Yes, I wish so!').length;
+        const cMaybe = list.filter(v => v.choice === 'Maybe one day!').length;
+        document.getElementById('opt1-total').textContent = cYes;
+        document.getElementById('opt2-total').textContent = cMaybe;
+        document.getElementById('opt1-label').textContent = 'Yes, I wish so!';
+        document.getElementById('opt2-label').textContent = 'Maybe one day!';
       } else {
-        const correctList = list.filter(v => v.isCorrect);
-        document.getElementById('opt1-total').textContent = correctList.length;
+        const correctCount = list.filter(v => v.isCorrect).length;
+        const wrongCount = list.filter(v => !v.isCorrect).length;
+        document.getElementById('opt1-total').textContent = correctCount;
+        document.getElementById('opt2-total').textContent = wrongCount;
+        document.getElementById('opt1-label').textContent = 'Correct Guesses ✓';
+        document.getElementById('opt2-label').textContent = 'Other Guesses';
       }
 
-      let displayList = list;
-
-      if (displayList.length === 0) {
+      if (list.length === 0) {
         grid.innerHTML = `<div class="col-span-full text-center py-8 text-slate-400 text-sm">
           No submissions recorded yet. Scan the QR code or visit the link!
         </div>`;
         return;
       }
 
-      grid.innerHTML = displayList.map((item, idx) => {
+      grid.innerHTML = list.map((item, idx) => {
         if (qId === 'q1') {
           const isYes = item.choice === 'Yes';
           const badgeClass = isYes ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/40' : 'bg-amber-500/20 text-amber-300 border-amber-400/40';
@@ -1602,11 +1748,26 @@
               <div class="flex items-center gap-2.5 min-w-0">
                 <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 font-display font-black text-xs flex items-center justify-center flex-shrink-0">${idx + 1}</span>
                 <div class="truncate">
-                  <div class="font-extrabold text-white text-sm truncate">${item.name}</div>
-                  <div class="text-[10px] text-slate-400">Hobby: <strong class="text-amber-300">${item.hobby}</strong></div>
+                  <div class="font-extrabold text-white text-sm truncate">${escapeHtml(item.name)}</div>
+                  <div class="text-[10px] text-slate-400">Hobby: <strong class="text-amber-300">${escapeHtml(item.hobby)}</strong></div>
                 </div>
               </div>
-              <span class="px-2.5 py-1 rounded-xl border text-xs font-bold whitespace-nowrap ${badgeClass}">${item.choice}</span>
+              <span class="px-2.5 py-1 rounded-xl border text-xs font-bold whitespace-nowrap ${badgeClass}">${escapeHtml(item.choice)}</span>
+            </div>
+          `;
+        } else if (qId === 'q2') {
+          const isYes = item.choice === 'Yes, I wish so!';
+          const badgeClass = isYes ? 'bg-amber-500/20 text-amber-300 border-amber-400/40' : 'bg-emerald-500/20 text-emerald-300 border-emerald-400/40';
+          return `
+            <div class="rounded-2xl bg-slate-900/90 border border-slate-700/80 p-3.5 flex items-center justify-between gap-2 shadow">
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-300 font-display font-black text-xs flex items-center justify-center flex-shrink-0">${idx + 1}</span>
+                <div class="truncate">
+                  <div class="font-extrabold text-white text-sm truncate">${escapeHtml(item.name)}</div>
+                  <div class="text-[10px] text-slate-400">${escapeHtml(item.time || '')}</div>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-xl border text-xs font-bold whitespace-nowrap ${badgeClass}">${escapeHtml(item.choice)}</span>
             </div>
           `;
         } else {
@@ -1618,8 +1779,8 @@
               <div class="flex items-center gap-2.5 min-w-0">
                 <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 font-display font-black text-xs flex items-center justify-center flex-shrink-0">${idx + 1}</span>
                 <div class="truncate">
-                  <div class="font-extrabold text-white text-sm truncate">${item.name}</div>
-                  <div class="text-[10px] text-slate-400">Guessed: <strong class="text-amber-300">${item.guess}</strong></div>
+                  <div class="font-extrabold text-white text-sm truncate">${escapeHtml(item.name)}</div>
+                  <div class="text-[10px] text-slate-400">Guessed: <strong class="text-amber-300">${escapeHtml(item.guess)}</strong></div>
                 </div>
               </div>
               <span class="px-2.5 py-1 rounded-xl border text-xs font-bold whitespace-nowrap ${badgeClass}">${statusText}</span>
